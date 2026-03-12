@@ -1,28 +1,20 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>SAMPLE COSMETICS</title>
-</head>
-<body>
-  <header>
-		<div class="header">
-			<div class="header_inner">
-				<ul class="gl_nav">
-					<li><a href="">事業内容</a></li>
-					<li><a href="">化粧品/フリーズドライ製法</a></li>
-					<li><a href="">サプリメント</a></li>
-					<li><a href="">サロン様へ</a></li>
-					<li><a href="">製造実績</a></li>
-					<li><a href="">会社概要</a></li>
-				</ul>
-					<a class="shop_btn" href=""><img src="img/SHOPICON.png" alt="">ONLINESHOP</a>
-			</div>
-		</div>
-	</header>
+<%- include('includes/_head.ejs', { 
+  title: 'トップページ', 
+  description: 'SAMPLE COSMETICSの公式サイトです。フリーズドライ製法による化粧品開発を行っています。' 
+}) %>
+
+<%- include('includes/_header.ejs') %>
+
+<div class="mv">
+  <img src="img/top.png" alt="SAMPLE COSMETICSの公式サイト">
+  <h1 class="hero_title">SAMPLE COSMETICS</h1>
+</div>
+
+<div id="ouredge_container">
+  <h2 class="section_title">OUR EDGE</h2>
+  <p class="section_title_sub">私たちの強み</p>
+  <div class="ou">
+</div>
 
 
-  <script type="module" src="/main.js"></script>
-</body>
-</html>
+<%- include('includes/_footer.ejs') %>

@@ -1,0 +1,25 @@
+@use '../variable/variable' as *;
+
+@mixin media ($breakpoint, $mq: 'normal') {
+  @if ($breakpoint == 'pc' or $breakpoint == 'sp') {
+    @media #{map-get($breakpoints, $breakpoint)} {
+      @content;
+    }
+  } @else if ($mq == 'normal') {
+    @media print, screen and (min-width:#{$breakpoint-sp + 1}px) and (max-width:$breakpoint) {
+      @content;
+    }
+  } @else if ($mq == 'min') {
+    @media print, screen and (min-width:$breakpoint) {
+      @content;
+    }
+  } @else if ($mq == 'max') {
+    @media print, screen and (max-width:$breakpoint) {
+      @content;
+    }
+  } @else {
+    @media print, screen and (min-width:#{$breakpoint}) and (max-width:$mq) {
+      @content;
+    }
+  }
+}

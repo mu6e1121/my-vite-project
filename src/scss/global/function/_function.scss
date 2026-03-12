@@ -1,0 +1,21 @@
+@use '../variable/variable' as *;
+@use 'sass:math';
+
+@function stripUnit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function sp($size) {
+  @return #{(math.div($size, calc(stripUnit($breakpoint-sp) / 2)) * 100)}vw;
+}
+
+@function percent($width, $parts) {
+  $total: $width;
+  @each $p in $parts {
+    $total: $total + $p;
+  }
+  @return percentage(math.div($width, $total));
+}

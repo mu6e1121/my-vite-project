@@ -1,0 +1,11 @@
+@use "../global" as *;
+
+.section_title {
+   @include media(pc) {
+      font-size: 38px;
+   }
+
+   @include media(sp) {
+      
+   }
+}

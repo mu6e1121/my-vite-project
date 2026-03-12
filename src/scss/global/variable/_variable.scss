@@ -1,0 +1,6 @@
+$breakpoint-sp: 780;
+
+$breakpoints: (
+  pc : "print, screen and (min-width: #{$breakpoint-sp + 1}px)",
+  sp : "print, screen and (max-width: #{$breakpoint-sp}px)",
+);
