@@ -1,0 +1,74 @@
+@use "../../global" as *;
+@use "sass:math";
+
+.product_bnr_body {
+   display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
+   @include media(pc) {
+      padding-right: calc(math.div(120, 1920) * 100vw);
+      height: 430px;
+   }
+
+   @include media(1080px) {
+      height: 300px;
+   }
+   @include media(sp) {
+      height: sp(180);
+   }
+   &.bg-01 {
+      background-image: url("/img/bnr_01.png");
+   }
+   &.bg-02 {
+      background-image: url("/img/bnr_02.png");
+   }
+   &.bg-03 {
+      background-image: url("/img/bnr_03.png");
+   }
+
+}
+
+.product_bnr_body_text_container {
+   @include media(pc) {
+      max-width: 430px;
+      width: 100%;
+   }
+   @include media(1080px) {
+      max-width: 320px;
+   }
+
+   @include media(sp) {
+      max-width: sp(250);
+      width: 100%;
+      margin-right: sp(10);
+   }
+   
+}
+
+.product_bnr_body_text {
+   color: #fff;
+   @include media(pc) {
+      font-size: 30px;
+   }
+
+   @include media(1080px) {
+      font-size: 24px;
+   }
+
+   @include media(sp) {
+      font-size: sp(15);
+   }
+}
+
+.product_bnr_body_text_sub {
+   color: #fff;
+}
+
+.shadow {
+   text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+

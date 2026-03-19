@@ -1,8 +1,9 @@
 @use '../variable/variable' as *;
+@use 'sass:map';
 
 @mixin media ($breakpoint, $mq: 'normal') {
   @if ($breakpoint == 'pc' or $breakpoint == 'sp') {
-    @media #{map-get($breakpoints, $breakpoint)} {
+    @media #{map.get($breakpoints, $breakpoint)} {
       @content;
     }
   } @else if ($mq == 'normal') {

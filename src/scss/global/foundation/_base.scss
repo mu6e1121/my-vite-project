@@ -1,12 +1,30 @@
+html, body {
+   font-family: "Yu Gothic medium";
+   background-color: #F9F9F9;
+   color: #333333;
+   box-sizing: border-box;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   background-attachment: fixed;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+}
+
 ol, ul {
    list-style: none;
 }
 
 a {
    text-decoration: none;
+   color: #000;
 }
 
 a:hover {
    opacity: 0.7;
    transition: all 0.3s;
 }
+

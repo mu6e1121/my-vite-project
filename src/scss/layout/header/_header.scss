@@ -1,46 +1,73 @@
 @use "../../global" as *;
+@use "sass:math";
 
-.header{
-	background-color: rgb(0 0 0 / 0.9);
-	padding: 23px 0;
+$side-nav-width: 240px;
+
+body {
+  padding-left: $side-nav-width;
+  
+  @include media(sp) {
+    padding-left: 0;
+  }
+}
+
+.header {
+  @include media(pc) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: rgb(0 0 0 / 0.9);
+    padding: 40px 0;
+    z-index: 1000;
+  }
 }
 
 .header_inner {
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
 }
 
-.gl_nav{
-	display: flex;
-	justify-content: space-between;
-	margin: 8px 5px 8px 0;
+.gl_nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0;
+  width: 100%;
+  gap: 10px;
 }
 
-.gl_nav a{
-	padding: 15px;
-	color: #fff;
-	font-size: 15px;
+.gl_nav a {
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  width: 100%;
 }
 
-.shop_btn{
-	width: 170px;
-	height: 40px;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 16px;
-	font-family:"Roboto";
-	font-weight: bold;
-	letter-spacing: 0.1em;
-	text-decoration: none;
-	border-radius: 25px;
-	border: solid 1px #fff;
-	color: #fff;
+.shop_btn {
+  width: 170px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: "Roboto";
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 25px;
+  border: solid 1px #fff;
+  color: #fff;
 }
 
-.shop_btn img{
-	width: 21px;
-	height: 18px;
-	padding-right: 5px;
+.shop_btn img {
+  width: 21px;
+  height: 18px;
+  padding-right: 5px;
 }
+

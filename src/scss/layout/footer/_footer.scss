@@ -1,11 +1,17 @@
 @use "../../global" as *;
 
-footer h4{
+.footer_nav_title {
 	color: #fff;
-	font-size: 18px;
 	border-bottom: solid 1px #808080;
 	padding-bottom: 10px;
 	letter-spacing: 1.5px;
+	white-space: nowrap;
+	@include media(pc) {
+		font-size: 18px;
+	}
+	@include media(sp) {
+		font-size: sp(14);
+	}
 }
 footer a{
 	color: #fff;
@@ -13,33 +19,60 @@ footer a{
 	letter-spacing: 1.8px;
 	font-size: 12px;
 }
-footer ul li{
+.footer_nav_list {
 	padding-top: 10px;
 }
-.footer_container{
-	width: 100%;
+
+.footer_wrapper {
 	background-color: rgb(0 0 0 / 0.9);
 }
-.footer_nav{
-	width: 90%;//修正
+
+.footer_nav_container {
 	display: flex;
 	justify-content: space-around;
 	margin: 0 auto;
+	@include media(pc) {
+		gap: 45px;
+		max-width: 1340px;
+		width: 100%;
+		padding-inline: 40px;
+	}
+	@include media(sp) {
+		flex-direction: column;
+		align-items: center;
+		padding-inline: sp(20);
+	}
 }
 .footer_nav_item{
-	width: 18%;//修正
-	margin-top: 50px;
-	margin-bottom: 50px;
+	@include media(pc) {
+		max-width: 220px;
+		width: 100%;
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	@include media(sp) {
+		max-width: sp(700);
+		width: 100%;
+		margin-top: sp(20);
+	}
 }
 
-.icon{
+.icon {
 	width: 12px;
 	height: auto;
 	vertical-align: middle;
 	margin-right: 5px;
 }
-.copyright{
+.copyright {
 	color: #ccc;
 	text-align: center;
-	padding-bottom: 20px;
+	@include media(pc) {
+		padding-bottom: 20px;
+	}
+	@include media(sp) {
+		margin-top: sp(20);
+		padding-bottom: sp(20);
+		font-size: sp(12);
+		padding-inline: sp(10);
+	}
 }
