@@ -6,7 +6,7 @@
 <%- include('includes/_header.ejs') %>
 
 <div class="mv">
-  <img src="img/top.png" alt="SAMPLE COSMETICSの公式サイト">
+  <img src="img/top.png" class="mv_image" alt="SAMPLE COSMETICSの公式サイト">
   <h1 class="hero_title"></h1><!--画像修正後h1挿入-->
 </div>
 <div class="gutter">
@@ -39,10 +39,12 @@
     <div class="development_container_left">
       <h2 class="section_title">DEVELOPMENT FLOW</h2>
       <p class="section_title_sub">開発フロー</p>
-      <p class="development_container_left_text">SAMPLE COSMETICSはヒアリングから<br>
-      試作、製造、納品後のフォローまで、<br>
-      お客様の理想を一貫してサポートします。</p>
-      <a href="" class="link_detail">View more</a>
+      <div class="development_container_left_flex">
+        <p class="development_container_left_text">SAMPLE COSMETICSはヒアリングから<br>
+        試作、製造、納品後のフォローまで、<br>
+        お客様の理想を一貫してサポートします。</p>
+        <a href="business/" class="link_detail">View more</a>
+      </div>
     </div>
 
     <div class="development_container_right">
@@ -115,7 +117,7 @@
     </div>
     </a>
 
-  <a href="cosmetics/">
+  <a href="supplement/">
     <div class="nav_grid_item">
       <img src="/img/supplement.png" class="nav_grid_item_img" alt="">
         <div class="nav_grid_inner">
@@ -128,7 +130,7 @@
     </div>
     </a>
 
-  <a href="cosmetics/">
+  <a href="for_salons/">
     <div class="nav_grid_item">
       <img src="/img/salon.png" class="nav_grid_item_img" alt="">
         <div class="nav_grid_inner">

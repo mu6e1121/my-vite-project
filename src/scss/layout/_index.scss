@@ -5,12 +5,15 @@
 
 
 .gutter {
+   margin-inline: auto;
    @include media(pc) {
       padding-inline: 50px;
+      max-width: 1440px;
    }
 
    @include media(sp) {
       padding-inline: sp(20);
+      max-width: sp(390);
    }
 }
 
@@ -117,6 +120,13 @@
    justify-content: space-between;
    &.reverse {
       flex-direction: row-reverse;
+      border-bottom: 1px solid #D9D9D9;
+      @include media(pc) {
+         padding-bottom: 100px;
+      }
+      @include media(sp) {
+         padding-bottom: sp(50);
+      }
    }
    
    @include media(pc) {
@@ -146,6 +156,9 @@
       max-width: 510px;
       padding-top: calc(100 / 1920 * 100vw);
    }
+   @include media(1180px) {
+      padding-top: 0;
+   }
    @include media(sp) {
       display: contents;
       max-width: sp(250);
@@ -156,9 +169,6 @@
    font-weight: 700;
    @include media(pc) {
       font-size: 30px;
-   }
-   @include media(1180px) {
-      font-size: 24px;
    }
    @include media(sp) {
       font-size: sp(16);
@@ -175,6 +185,9 @@
       font-family: "Sawarabi Gothic", sans-serif;
       margin-top: 50px;
       font-size: 16px;
+   }
+   @include media(1180px) {
+      margin-top: 30px;
    }
    @include media(sp) {
       font-size: sp(10);
@@ -202,5 +215,65 @@
    }
    @include media(sp) {
       margin-bottom: sp(50);
+   }
+}
+
+.check_mark {
+   position: relative;
+   border: 2px solid #000;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   @include media(pc) {
+      min-width: 40px;
+      min-height: 40px;
+   }
+   @include media(sp) {
+      min-width: sp(20);
+      min-height: sp(20);
+   }
+}
+
+.check-list {
+   display: grid;
+   margin-inline: auto;
+   justify-content: center;
+   background-color: #fff;
+   border: 10px solid #EBEBEB;
+   @include media(pc) {
+      row-gap: 50px;
+      max-width: 700px;
+      padding-block: 50px;
+      padding-inline: 30px;
+   }
+   @include media(sp) {
+      row-gap: sp(25);
+      max-width: sp(350);
+      padding-block: sp(25);
+   }
+}
+
+.check-list_item {
+   display: flex;
+   align-items: center;
+   border-bottom: 1px solid #D9D9D9;
+   @include media(pc) {
+      gap: 30px;
+      padding-bottom: 20px;
+   }
+   @include media(sp) {
+      gap: sp(15);
+      padding-bottom: sp(15);
+   }
+}
+
+.check-list_item_text {
+   font-weight: 700;
+   @include media(pc) {
+      font-size: 20px;
+   }
+   @include media(sp) {
+      font-size: sp(10);
    }
 }

@@ -1,28 +1,107 @@
 <header>
-   <div class="header">
+	<button type="button" class="js-hamburger c-hamburger" aria-controls="global-nav" aria-expanded="false">
+		<span class="c-hamburger_line"></span>
+		<span class="c-hamburger_line"></span>
+		<span class="c-hamburger_line"></span>
+		<span class="u-visually-hidden"></span>
+	</button>
+	<div class="header js-header">
 		<div class="header_inner">
-			<!-- ハンバーガーボタン -->
-			<button type="button" class="js-hamburger c-hamburger" aria-controls="global-nav" aria-expanded="false">
-			<span class="c-hamburger_line"></span>
-			<span class="c-hamburger_line"></span>
-			<span class="c-hamburger_line"></span>
-			<span class="u-visually-hidden"></span>
-			</button>
-			<ul class="gl_nav">
-				<li><a href="/index.html">TOP</a>
-				<li><a href="/news/index.html">NEWS</a></li>
-				<li><a href="/business/index.html">BUSINESS DETAILS</a></li>
-				<li><a href="/cosmetics/index.html">FREEZE-DRIED /COSMETICS</a></li>
-				<li><a href="/supplement/index.html">SUPPLEMENT</a></li>
-				<li><a href="/for_salons/index.html">FOR SALONS</a></li>
-				<li><a href="/product/index.html">PRODUCTS</a></li>
-				<li><a href="/company/index.html">COMPANY</a></li>
-			</ul>
-			<a class="shop_btn" href=""><img src="/img/shop-icon.png" alt="">ONLINESHOP</a>
+			<nav>
+				<ul class="gl_nav">
+					<li>
+						<a href="/index.html" class="slot-link">
+							<span class="slot-wrapper">
+							<span class="slot-item">TOP</span>
+							<span class="slot-item">TOP</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/news/index.html" class="slot-link">
+							<span class="slot-wrapper">
+							<span class="slot-item">NEWS</span>
+							<span class="slot-item">NEWS</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/business/index.html" class="slot-link">
+							<span class="slot-wrapper">
+							<span class="slot-item">BUSINESS DETAILS</span>
+							<span class="slot-item">BUSINESS DETAILS</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/cosmetics/index.html" class="slot-link">
+							<span class="slot-wrapper">
+							<span class="slot-item">FREEZE-DRIED</span>
+							<span class="slot-item">FREEZE-DRIED</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/supplement/index.html" class="slot-link">
+							<span class="slot-wrapper">
+							<span class="slot-item">SUPPLEMENT</span>
+							<span class="slot-item">SUPPLEMENT</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="//for_salons/index.html" class="slot-link">
+							<span class="slot-wrapper">
+							<span class="slot-item">FOR SALONS</span>
+							<span class="slot-item">FOR SALONS</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/product/index.html" class="slot-link">
+							<span class="slot-wrapper">
+							<span class="slot-item">PRODUCTS</span>
+							<span class="slot-item">PRODUCTS</span>
+							</span>
+						</a>
+					</li>
+					<li>
+						<a href="/company/index.html" class="slot-link">
+							<span class="slot-wrapper">
+							<span class="slot-item">COMPANY INFO</span>
+							<span class="slot-item">COMPANY INFO</span>
+							</span>
+						</a>
+					</li>
+				</ul>
+				<a href="" class="shop_btn"><img src="/img/shop-icon.png" alt="">ONLINESHOP</a>
+				<%- include('includes/_contact_btn.ejs') %>
+			</nav>
 		</div>
 	</div>
 </header>
 
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
+$(function(){
+    const btn = $('.js-hamburger');
+	 const $line = $('.c-hamburger_line');
+    const header = $('.js-header');
+
+    btn.on('click', function() {
+        $(this).toggleClass('is-active');
+        header.toggleClass('is-active');
+        $('body').toggleClass('u-noscroll');
+		  if ($(this).hasClass('is-active')) {
+            $line.css('background-color', '#fff');
+				$(this).attr('aria-expanded', true); 
+        } else {
+            $line.css('background-color', '#fff');
+				$(this).attr('aria-expanded', 'false');
+        }
+    });
+});
+</script>
+
 
 </script>

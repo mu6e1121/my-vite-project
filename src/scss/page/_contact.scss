@@ -1,0 +1,218 @@
+@use "../global" as *;
+
+.contact_wrapper {
+   @include media(pc) {
+      padding-block: 100px;
+   }
+   @include media(sp) {
+      padding-block: sp(50);
+   }
+}
+
+.contact_form_wrapper {
+   margin-inline: auto;
+   display: flex;
+   flex-direction: column;
+   @include media(pc) {
+      max-width: 1000px;
+      row-gap: 40px;
+   }
+   @include media(sp) {
+      row-gap: sp(20);
+   }
+}
+
+.contact_form_row {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   @include media(pc) {
+      gap: 100px;
+   }
+}
+
+.contact_form_label {
+   align-self: center;
+   color: #000;
+   font-weight: bold;
+   position: relative;
+   @include media(pc) {
+      max-width: 180px;
+      width: 100%;
+      font-size: 16px;
+   }
+   @include media(sp) {
+      max-width: sp(90);
+      width: 100%;
+      font-size: sp(8);
+   }
+   &.require::after {
+      content: "必須";
+      font-family: "Yu Gothic";
+      color: #fff;
+      position: absolute;
+      display: inline-block;
+      align-self: center;
+      text-align: center;
+      background-color: #CB0000;
+      border-radius: 3px;
+      @include media(pc) {
+         font-size: 14px;
+         width: 70px;
+         padding-block: 6px;
+         right: -90px;
+      }
+      @include media(sp) {
+         font-size: sp(7);
+         width: sp(35);
+         padding-block: sp(3);
+         right: sp(-20);
+      }
+   }
+   &.textarea-label {
+      align-self: flex-start;
+      @include media(pc) {
+         margin-top: 20px;
+      }
+      @include media(sp) {
+         margin-top: sp(10);
+      }
+   }
+}
+
+.contact_form_content {
+   border: 2px solid #F3F4F8;
+   background-color: #fff;
+   font-family: "Ubuntu";
+   @include media(pc) {
+      max-width: 700px;
+      width: 100%;
+      border-radius: 5px;
+   }
+   @include media(sp) {
+      max-width: sp(230);
+      width: 100%;
+      border-radius: sp(5);
+   }
+}
+
+.contact_form_style {
+   @include media(pc) {
+      padding: 14px;
+      width: 100%;
+      font-size: 15px;
+   }
+   @include media(sp) {
+      padding: sp(7);
+      font-size: sp(8);
+      width: 100%;
+   }
+   &.textarea-body {
+      width: 100%;
+      @include media(pc) {
+         padding-bottom: 250px;
+      }
+      @include media(sp) {
+         padding-bottom: sp(125);
+      }
+   }
+}
+
+.contact_policy_box {
+   display: flex;
+   align-items: center;
+   @include media(pc) {
+      gap: 10px;
+   }
+   @include media(sp) {
+      gap: sp(5);
+   }
+}
+
+.contact_form_row-checkbox {
+   display: flex;
+   justify-content: center;
+   @include media(pc) {
+      margin-top: 40px;
+   }
+   @include media(sp) {
+      margin-top: sp(20);
+   }
+}
+
+.contact_check_input {
+   transform: scale(1.3);
+}
+
+.contact_check_label {
+   font-family: "Noto Sans";
+   @include media(pc) {
+      font-size: 16px;
+      margin-bottom: 2px;
+   }
+   @include media(sp) {
+      font-size: sp(8);
+      margin-bottom: sp(1);
+   }
+}
+
+.policy_link {
+   text-decoration: underline;
+}
+
+.contact_submit_area {
+   position: relative;
+   display: table;
+   margin-inline: auto;
+   @include media(pc) {
+      margin-top: 40px;
+   }
+   @include media(sp) {
+      margin-top: sp(20);
+   }
+   &::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      border-right: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      pointer-events: none;
+      @include media(pc) {
+         width: 10px;
+         height: 10px;
+      }
+      @include media(sp) {
+         width: sp(5);
+         height: sp(5);
+      }
+   }
+}
+
+.contact_submit_btn {
+   color: #fff;
+   background-color: #111111;
+   text-align: left;
+   display: inline-flex;
+   align-items: center;
+   font-weight: 700;
+   letter-spacing: 0.15em;
+   @include media(pc) {
+      padding-block: 10px;
+      width: 200px;
+      padding-left: 20px;
+      border-radius: 30px;
+      font-size: 15px;
+   }
+   @include media(sp) {
+      padding-block: sp(5);
+      width: sp(100);
+      padding-left: sp(10);
+      border-radius: sp(15);
+      font-size: sp(8);
+   }
+   &:hover {
+      opacity: 0.7;
+   }
+}

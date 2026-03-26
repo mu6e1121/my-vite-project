@@ -1,0 +1,116 @@
+@use "../global" as *;
+
+.product_lineup_container {
+   display: grid;
+   @include media(pc) {
+      gap: 30px;
+   }
+   @include media(1440px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+   }
+   @include media(sp) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: sp(10);
+   }
+}
+
+.product_lineup_item {
+   display: flex;
+   margin-inline: auto;
+   @include media(pc) {
+      gap: 60px;
+      max-width: 1140px;
+   }
+   @include media(1440px) {
+      flex-direction: column;
+      gap: 20px;
+   }
+   @include media(sp) {
+      flex-direction: column;
+      gap: sp(10);
+   }
+   &_image {
+      @include media(pc) {
+      max-width: 500px;
+      height: auto;
+   }
+   @include media(sp) {
+      max-width: sp(250);
+      width: 100%;
+   }
+   }
+   &_body {
+      @include media(pc) {
+         align-self: center;
+         max-width: 580px;
+         padding-block: 20px;
+      }
+      @include media(1440px) {
+         max-width: 500px;
+         padding-block: 0;
+      }
+      @include media(sp) {
+         max-width: sp(250);
+      }
+   }
+   &_name {
+      @include media(pc) {
+         font-size: 28px;
+         margin-bottom: 30px;
+      }
+      @include media(sp) {
+         font-size: sp(14);
+         margin-bottom: sp(15);
+      }
+   }
+   &_desc {
+      line-height: 1.8;
+      @include media(pc) {
+         font-size: 15px;
+      }
+      @include media(sp) {
+         font-size: sp(8);
+      }
+   }
+   &_ingredients {
+      background-color: #F5F5F5;
+      @include media(pc) {
+         margin-top: 25px;
+         padding: 20px;
+      }
+      @include media(sp) {
+         margin-top: sp(13);
+         padding: sp(10);
+      }
+      &_list {
+         display: flex;
+         flex-direction: column;
+         @include media(pc) {
+            gap: 10px;
+         }
+         @include media(sp) {
+            gap: sp(5);
+         }
+      }
+      &_list_item {
+         @include media(pc) {
+            font-size: 15px;
+         }
+         @include media(sp) {
+            font-size: sp(8);
+         }
+      }
+   }
+}
+
+.product_lineup_bottom {
+   display: flex;
+   justify-content: center;
+   @include media(pc) {
+      margin-bottom: 100px;
+   }
+   @include media(sp) {
+      margin-bottom: sp(50);
+   }
+}

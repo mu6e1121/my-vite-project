@@ -1,0 +1,128 @@
+<%- include('includes/_head.ejs', { 
+  title: 'CONTACT｜お問い合わせ', 
+  description: 'SAMPLE COSMETICSの公式サイトです。フリーズドライ製法による化粧品開発を行っています。' 
+}) %>
+
+<%- include('includes/_header.ejs') %>
+
+<div class="sub-mv">
+  <h1 class="sub-mv_hero_title">CONTACT</h1>
+  <p class="sub-mv_hero_title_sub">お問い合わせ</p>
+</div>
+
+<div class="gutter">
+   <div class="contact_wrapper">
+      <h2 class="section_title">CONTACT</h2>
+      <p class="section_title_sub">お問い合わせ</p>
+      <dl class="contact_form_wrapper">
+         <div class="contact_form_row">
+            <dt class="contact_form_label require">お名前</dt>
+            <dd class="contact_form_content">
+               <input type="text" name="name" placeholder="お名前を記入してください" class="contact_form_style">
+            </dd>
+         </div>
+         <div class="contact_form_row">
+            <dt class="contact_form_label require">ふりがな</dt>
+            <dd class="contact_form_content">
+               <input type="text" name="kana" placeholder="ふりがなを記入してください" class="contact_form_style">
+            </dd>
+         </div>
+         <div class="contact_form_row">
+            <dt class="contact_form_label require">メールアドレス</dt>
+            <dd class="contact_form_content">
+               <input type="text" name="email" placeholder="メールアドレスを記入してください" class="contact_form_style">
+            </dd>
+         </div>
+         <div class="contact_form_row">
+            <dt class="contact_form_label">御社名</dt>
+            <dd class="contact_form_content">
+               <input type="text" name="company-name" placeholder="御社名を記入してください" class="contact_form_style">
+            </dd>
+         </div>
+         <div class="contact_form_row">
+            <dt class="contact_form_label">電話番号</dt>
+            <dd class="contact_form_content">
+               <input type="text" name="tel" placeholder="電話番号を記入してください" class="contact_form_style">
+            </dd>
+         </div>
+         <div class="contact_form_row">
+            <dt class="contact_form_label require textarea-label">お問い合わせ内容</dt>
+            <dd class="contact_form_content">
+               <textarea name="message" placeholder="お問い合わせ内容を記入してください" class="contact_form_style textarea-body"></textarea>
+            </dd>
+         </div>
+      </dl>
+      <div class="contact_form_row-checkbox">
+         <div class="contact_policy_box">
+            <input type="checkbox" name="acceptance" id="policy_check" class="contact_check_input">
+            <label for="policy_check" class="contact_check_label">
+               <a href="/privacy_policy/" target="_blank" class="policy_link">プライバシーポリシー</a>に同意する
+            </label>
+         </div>
+      </div>
+      <div class="contact_submit_area">
+         <input type="submit" value="送信する" class="contact_submit_btn">
+      </div>
+   </div>
+   <!-- <dl class="contact_form_wrapper">
+      <div class="contact_form_row">
+         <dt class="contact_form_label require">お名前</dt>
+         <dd class="contact_form_content">
+            [text* your-name placeholder "お名前を記入してください" class:contact_form_style]
+         </dd>
+      </div>
+
+      <div class="contact_form_row">
+         <dt class="contact_form_label require">ふりがな</dt>
+         <dd class="contact_form_content">
+            [text* your-kana placeholder "ふりがなを記入してください" class:contact_form_style]
+         </dd>
+      </div>
+
+      <div class="contact_form_row">
+         <dt class="contact_form_label require">メールアドレス</dt>
+         <dd class="contact_form_content">
+            [email* your-email placeholder "メールアドレスを記入してください" class:contact_form_style]
+         </dd>
+      </div>
+
+      <div class="contact_form_row">
+         <dt class="contact_form_label">御社名</dt>
+         <dd class="contact_form_content">
+            [text company-name placeholder "御社名を記入してください" class:contact_form_style]
+         </dd>
+      </div>
+
+      <div class="contact_form_row">
+         <dt class="contact_form_label">電話番号</dt>
+         <dd class="contact_form_content">
+            [tel tel-number placeholder "電話番号を記入してください" class:contact_form_style]
+         </dd>
+      </div>
+
+      <div class="contact_form_row">
+         <dt class="contact_form_label require textarea-label">お問い合わせ内容</dt>
+         <dd class="contact_form_content">
+            [textarea* your-message placeholder "お問い合わせ内容を記入してください" class:contact_form_style class:textarea-body]
+         </dd>
+      </div>
+   </dl>
+
+   <div class="contact_form_row-checkbox">
+      <div class="contact_policy_box">
+         [acceptance acceptance-policy class:contact_check_input]
+         <label for="policy_check" class="contact_check_label">
+            <a href="/privacy_policy/" target="_blank" class="policy_link">プライバシーポリシー</a>に同意する
+         </label>
+      </div>
+   </div>
+
+   <div class="contact_submit_area">
+      [submit class:contact_submit_btn "送信する"]
+   </div> -->
+</div>
+
+<%- include('includes/_product_bnr02.ejs') %>
+<%- include('includes/_product_bnr03.ejs') %>
+
+<%- include('includes/_footer.ejs') %>

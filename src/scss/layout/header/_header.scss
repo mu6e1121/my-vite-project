@@ -4,10 +4,8 @@
 $side-nav-width: 240px;
 
 body {
-  padding-left: $side-nav-width;
-  
-  @include media(sp) {
-    padding-left: 0;
+  @include media(pc) {
+    padding-right: $side-nav-width;
   }
 }
 
@@ -15,12 +13,29 @@ body {
   @include media(pc) {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 240px;
     height: 100vh;
     background-color: rgb(0 0 0 / 0.9);
     padding: 40px 0;
     z-index: 1000;
+  }
+  @include media(sp) {
+    display: block;
+    position: fixed;
+    background-color: rgb(0 0 0 / 0.9);
+    width: sp(160);
+    height: 100%;
+    height: 100dvh;
+    top: 0;
+    right: -100%;
+    z-index: 1000;
+    transition: right 0.5s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    &.is-active {
+      right: 0;
+    }
   }
 }
 
@@ -29,45 +44,161 @@ body {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  @include media(sp) {
+    position: relative;
+  }
+}
+
+.c-hamburger {
+  display: none;
+  @include media(sp) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1100;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    top: sp(10);
+    right: sp(10);
+    border-radius: 50%;
+    border: 1px #333333 solid;
+    background-color: #333333;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  &.is-active {
+    background-color: transparent;
+    border-color: #fff;
+    .c-hamburger_line:nth-child(1) {
+      transform: translate(-50%, -50%) translateY(0) rotate(45deg); 
+    }
+    .c-hamburger_line:nth-child(2) {
+      opacity: 0;
+    }
+    .c-hamburger_line:nth-child(3) {
+      transform: translate(-50%, -50%) translateY(0) rotate(-45deg);
+    }
+  }
+
+  &_line {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: #fff;
+    will-change: transform, opacity;
+    transition: all 0.7s ease;
+    
+    &:nth-child(1) { transform: translate(-50%, -50%) translateY(-5px); }
+    &:nth-child(2) { transform: translate(-50%, -50%); }
+    &:nth-child(3) { transform: translate(-50%, -50%) translateY(5px); }
+  }
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include media(sp) {
+    padding-bottom: sp(40);
+  }
 }
 
 .gl_nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 40px 0;
   width: 100%;
-  gap: 10px;
+  @include media(pc) {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    gap: 20px;
+  }
+  @include media(sp) {
+    margin-top: sp(70);
+    margin-bottom: sp(15);
+    gap: sp(10);
+  }
+}
+
+.slot-link {
+  display: inline-block;
+  overflow: hidden;
+  height: 2em;
+  line-height: 1.2em;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.slot-wrapper {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s cubic-bezier(0.3, 0.1, 0.3, 1);
+}
+
+.slot-item {
+  display: block;
+  height: 2em;
+}
+
+.slot-link:hover .slot-wrapper {
+  transform: translateY(-50%);
 }
 
 .gl_nav a {
   padding: 10px 20px;
   color: #fff;
-  font-size: 15px;
   display: block;
   text-align: center;
   width: 100%;
+  @include media(pc) {
+    font-size: 15px;
+  }
+  @include media(sp) {
+    font-size: sp(8);
+  }
 }
 
 .shop_btn {
-  width: 170px;
-  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
   font-family: "Roboto";
   font-weight: bold;
   letter-spacing: 0.1em;
   text-decoration: none;
-  border-radius: 25px;
   border: solid 1px #fff;
   color: #fff;
+  border-radius: 25px;
+  @include media(pc) {
+    font-size: 16px;
+    width: 170px;
+    padding: 10px;
+  }
+  @include media(sp) {
+    font-size: sp(8);
+    width: sp(85);
+    padding: sp(5);
+  }
 }
 
 .shop_btn img {
-  width: 21px;
-  height: 18px;
-  padding-right: 5px;
+  @include media(pc) {
+    width: 21px;
+    height: 18px;
+    padding-right: 5px;
+    margin-bottom: 2px;
+  }
+  @include media(sp) {
+    width: sp(10.5);
+    height: sp(9);
+    padding-right: sp(2.5);
+    margin-bottom: sp(1);
+  }
+  
 }
 
