@@ -8,9 +8,24 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  root: './src', // 開発の基点をsrcフォルダに設定
+  root: './src', publicDir: resolve(__dirname, 'public'), // 開発の基点をsrcフォルダに設定
+  server: {
+    watch: {
+      usePolling: true, // ファイルシステムの変更検知を確実にする
+      include: ['src/**/*.{html,ejs,js,scss,css}'], // 監視対象にejsファイルを追加
+    }
+  },
   plugins: [
     ViteEjsPlugin(),
+    // EJSファイルの変更を監視してフルリロードを強制するカスタムプラグイン
+    {
+      name: 'ejs-hmr',
+      handleHotUpdate({ file, server }) {
+        if (file.endsWith('.ejs')) {
+          server.ws.send({ type: 'full-reload' });
+        }
+      },
+    },
   ],
   resolve: {
     alias: {
@@ -48,3 +63,4 @@ export default defineConfig({
     },
   },
 });
+
