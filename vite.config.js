@@ -48,7 +48,12 @@ export default defineConfig({
         product: resolve(__dirname, 'src/product/index.html'),
         supplement: resolve(__dirname, 'src/supplement/index.html'),
         news: resolve(__dirname, 'src/news/index.html'),
-        online_shop: resolve(__dirname, 'src/online_shop/index.html'),
+        news_single: resolve(__dirname, 'src/news/single.html'),
+        'new-item': resolve(__dirname, 'src/news/category/new-item.html'),
+        'campaign': resolve(__dirname, 'src/news/category/campaign.html'),
+        'others': resolve(__dirname, 'src/news/category/others.html'),
+        'renewal': resolve(__dirname, 'src/news/category/renewal.html'),
+        'oem': resolve(__dirname, 'src/news/category/oem.html'),
       },
       output: {
         assetFileNames: (assetInfo) => {

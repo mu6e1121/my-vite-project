@@ -1,0 +1,57 @@
+<%- include('includes/_head.ejs', { 
+  title: 'NEWS｜お知らせ', 
+  description: 'SAMPLE COSMETICSの公式サイトです。フリーズドライ製法による化粧品開発を行っています。' 
+}) %>
+
+<%- include('includes/_header.ejs') %>
+
+<div class="gutter">
+   <div class="news_wrapper">
+         <h1 class="news_title">NEWS</h1>
+         <p class="news_title_sub">お知らせ</p>
+         <div class="n-category">
+            <p class="n-category_label">Category</p>
+            <ul class="n-category_list">
+               <li class="n-category_list_item"><a href="" class="n-category_list_item_link">すべて</a></li>
+               <li class="n-category_list_item"><a href="" class="n-category_list_item_link">新商品</a></li>
+               <li class="n-category_list_item"><a href="" class="n-category_list_item_link">キャンペーン</a></li>
+               <li class="n-category_list_item current"><a href="" class="n-category_list_item_link current">リニューアル</a></li>
+               <li class="n-category_list_item"><a href="" class="n-category_list_item_link">OEM実績</a></li>
+               <li class="n-category_list_item"><a href="" class="n-category_list_item_link">その他</a></li>
+            </ul>
+         </div>
+         <div class="n-list_wrapper">
+         <%- include('includes/_n-item.ejs', { 
+            url: '/index.html', 
+            datetime: '2026-01-27', 
+            date: '2026.01.27', 
+            category: 'リニューアル', 
+            title: '高保湿美容液「Advanced Serum」成分リニューアルのお知らせ — 浸透型次世代レチノールを増量' 
+         }) %>
+         <%- include('includes/_n-item.ejs', { 
+            url: '/index.html', 
+            datetime: '2025-12-02', 
+            date: '2025.12.02', 
+            category: 'リニューアル', 
+            title: 'ここに記事のタイトルが入ります' 
+         }) %>
+         <%- include('includes/_n-item.ejs', { 
+            url: '/index.html', 
+            datetime: '2025-10-01', 
+            date: '2025.10.01', 
+            category: 'リニューアル', 
+            title: 'ここに記事のタイトルが入ります' 
+         }) %>
+         <%- include('includes/_n-item.ejs', { 
+            url: '/index.html', 
+            datetime: '2025-09-10', 
+            date: '2025.09.10', 
+            category: 'リニューアル', 
+            title: 'ここに記事のタイトルが入ります' 
+         }) %>
+         </div>
+   </div>
+</div>
+<%- include('includes/_product_bnr02.ejs') %>
+<%- include('includes/_product_bnr03.ejs') %>
+<%- include('includes/_footer.ejs') %>
