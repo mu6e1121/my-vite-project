@@ -1,0 +1,21 @@
+{
+  "media pc": {
+    "prefix": "mpc",
+    "body": [
+      "@include media(pc) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "SCSS media query for pc"
+  },
+
+  "media sp": {
+    "prefix": "msp",
+    "body": [
+      "@include media(sp) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "SCSS media query for sp"
+  }
+}
